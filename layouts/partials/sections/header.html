@@ -37,6 +37,8 @@
         92.85% {transform:translate3d(0,-14.28%,0);}
     }
 </style>
+
+{{ $headless := .Site.GetPage "/sections" }}
 <div class="header w-full min-h-screen flex flex-col justify-between">
     {{ partial "navbar.html" . }}
     <div class="flex flex-col justify-center h-full py-12">
@@ -62,7 +64,10 @@
             </div>
         </div>
     </div>
+    {{ $about := $headless.Resources.GetMatch (printf "*%s*" "about") }}
+    {{ if $about }}
     <div class="flex flex-row w-full justify-center pb-12">
-        <a class="px-10 py-2 text-gray-200 bg-pink-600 rounded-full shadow-md text-lg hover:bg-gray-800 hover:border-red" href="#about">More Information</a>
+        <a class="px-10 py-2 text-gray-200 bg-pink-600 rounded-full shadow-md text-lg hover:bg-gray-800 hover:border-red" href="#about">{{ $about.Title }}</a>
     </div>
+    {{ end }}
 </div>
