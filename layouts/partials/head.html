@@ -14,7 +14,7 @@
 <!-- ./END SOCIAL META DATA -->
 <base href="{{ .Site.BaseURL }}">
 <meta name="theme-color" content="#ffffff">
-<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Author.name }}{{ end }}</title>
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 <link rel="stylesheet" href="/css/page.css">
 {{ $favicon := resources.GetMatch .Site.Params.logo.favicon }}
 <link rel="icon" type="image/png" href="{{ ($favicon.Resize "64x" ).RelPermalink }}">
