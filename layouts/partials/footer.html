@@ -53,6 +53,11 @@
             &copy; {{ .Site.Params.author.name }} {{ now.Format "2006" }}
         </a>
     </span>
+    {{ with .GitInfo }}
+        <span class="block text-center text-gray-800 text-sm font-light">
+            <p>version {{ .AbbreviatedHash }}</p>
+        </span>
+    {{ end }}
 </div>
 {{ end }}
 
