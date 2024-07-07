@@ -55,7 +55,7 @@
     </span>
     {{ with .GitInfo }}
         <span class="block text-center text-gray-800 text-sm font-light">
-            <p>version {{ .AbbreviatedHash }}</p>
+            <p>version {{ .AbbreviatedHash }} du {{ .AuthorDate.Format "02/01/2006" }}</p>
         </span>
     {{ end }}
 </div>
